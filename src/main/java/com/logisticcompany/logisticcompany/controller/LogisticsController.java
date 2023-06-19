@@ -7,6 +7,7 @@ import com.logisticcompany.logisticcompany.service.TruksService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +29,7 @@ public class LogisticsController {
     }
 
     @GetMapping("/hello")
+    @PreAuthorize("hasRole('client_admin')")
     public String hello() {
         return "Hello from Spring boot & Keycloak";
     }

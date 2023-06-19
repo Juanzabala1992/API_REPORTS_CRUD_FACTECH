@@ -28,6 +28,11 @@ server:
       resource-server:
         jwt:
           issuer-uri: http://localhost:9090/realms/mycompany-microservices-realm
+jwt:
+  auth:
+    converter:
+      resource-id: spring-cloud-gateway-client
+      principle-attribute: preferred_username
 
 
 
